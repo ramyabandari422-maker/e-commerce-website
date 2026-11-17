@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/cart/cart.css">
+</head>
+
+<body>
+   
+    <h1 class="title">🛒 My Shopping Cart</h1>
+    <div class="containre">
+
+        {%for i in items %}
+        <div class="card">
+            <div class="image">
+                <img src="{{i.product.image.url}}" alt="" height="180px">
+            </div>
+            <div class="list">
+                <h2>{{i.product.product_name}}</h2>
+                <h3>{{i.product.price}}</h3>
+                <p>quantity:{{i.quantity}}</p>
+                <a href="{% url 'cart_delete' i.id%}" class="remove"> remove🗑️ </a>
+            </div>
+        </div>
+        {%endfor%}
+        <hr>
+        <div class="summary">
+            <h1>total amount: {{total}}</h1>
+            <button class="checkout"><a href="{% url 'checkout' %}">checkout</a></button>
+        </div>
+    </div>
+</body>
+
+</html>

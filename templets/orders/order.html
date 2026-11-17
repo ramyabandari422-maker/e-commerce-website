@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="/static/orders/orders.css">
+</head>
+
+<body>
+   
+<div class="container">
+      <h1 class="order">my orders</h1>
+      <p class="title">Track all your placed orders</p>
+
+      {% for o in orders %}
+      <div class="card">
+         <div class="top">
+            <div>
+
+               <h2>order #{{o.id}}</h2>
+               <span class="status">{{o.status}}</span>
+            </div>
+
+            <div class="price">  ₹{{o.total_price}}</div>
+         </div>
+         <div class="bottom">
+
+            <p><strong>order id:</strong>{{o.id}}</p>
+            <p><strong>date:</strong>{{o.created_at}}</p>
+         </div>
+      </div>
+      {%endfor%}
+   </div>
+</body>
+
+</html>

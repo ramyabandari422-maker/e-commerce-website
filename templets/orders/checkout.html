@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/orders/checkout.css">
+</head>
+
+<body>
+    
+    <div  class="container">
+        <div class="card"> 
+            <h1>checkout page</h1>
+            <p class="title">
+                Review your order and place it securely.
+            </p>
+
+            <div class="price">
+
+                <h3>Total Amount</h3>
+
+
+                <h2>₹{{total}}</h2>
+
+                <form action="" method="post">
+                    {% csrf_token%}
+                    <button type="submit"> place order</button>
+
+                </form>
+            </div>
+
+        </div>
+
+</body>
+
+</html>

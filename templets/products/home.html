@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/products/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">🛒 TrendShop</div>
+
+    <div class="nav-links">
+        <a href="{% url 'home'%}">Home</a>
+        <a href="{% url 'home'%}">Products</a>
+        <a href="{% url 'cart' %}">Cart</a> 
+        <a href="{%url 'orders'%}">Orders</a>
+        <a href="{% url 'signup'%}">signup</a>
+        <a href="{% url 'login'%}">login</a>
+    </div>
+
+    <div class="auth">
+        {% if user.is_authenticated %}
+            
+
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button class="logout">Logout</button>
+            </form>
+        {% endif %}
+    </div>
+</nav>
+<h1  class="welcome">Welcome  {{ user.username }}👋</h1>
+
+<div class="explore">
+    <h1>Explore Our Products</h1>
+    <p>Top deals on top products</p>
+</div>
+
+<div class="container">
+
+{% for p in products %}
+
+<div class="card">
+
+<div class="new">NEW</div>
+
+<img src="{{ p.image.url }}" alt="">
+
+<h2>{{ p.product_name }}</h2>
+
+<h3>₹{{ p.price }}</h3>
+
+<div class="rating">
+★★★★★ <span>(120)</span>
+</div>
+
+<a href="{% url 'pro_details' p.id %}" class="details">
+View Details
+</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>

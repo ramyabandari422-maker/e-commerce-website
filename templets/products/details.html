@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/products/details.css">
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="card">
+            <div class=" details">
+                <img src="{{details.image.url}}" alt="" height="200px">
+            </div>
+            <div class="right">
+                <span class="new"> new</span>
+                <h1>{{details.product_name}}</h1>
+                <div class="rating">
+                    ★★★★★
+                    <span>(120 Reviews)</span>
+                </div>
+
+                <div class="price">{{details.price}}</div>
+                <h3>product features:</h3>
+
+                <h3>{{details.features}}</h3>
+
+
+
+                <a href="{%  url 'add_to_cart' details.id %}" class="add">add to cart</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

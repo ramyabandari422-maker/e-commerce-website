@@ -1,0 +1,102 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-image:url(/media/products/images1.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+.signup{
+    width:550px;
+    background:#fff;
+    padding:5px;
+    border-radius:18px;
+    box-shadow:0 12px 35px rgba(0,0,0,.15);
+}
+
+.signup h1{
+    text-align:center;
+    color:#1f2937;
+    margin-bottom:20px;
+    font-size:30px;
+}
+
+.signup p{
+    margin-bottom:15px;
+    font-size:15;
+    color:#333;
+}
+
+.signup-container label{
+    display:block;
+    font-weight:600;
+    margin-bottom:6px;
+}
+
+.signup input[type=text],
+.signup input[type=password],
+.signup input[type=email]{
+    width:100%;
+    padding:5px;
+    margin-top:8px;
+    margin-bottom:15px;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+}
+
+.signup input:focus{
+    border-color:#4f46e5;
+    box-shadow:0 0 8px rgba(79,70,229,.3);
+}
+
+.signup ul{
+    margin:10px 0 20px 25px;
+    color:#666;
+    font-size:15px;
+}
+
+.signup input[type=submit]{
+    width:100%;
+    padding:5px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(90deg,#2563eb,#ec4899);
+    color:#fff;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.signup input[type=submit]:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(37,99,235,.3);
+}
+
+.login{
+    text-align:center;
+    margin-top:25px;
+    font-size:17px;
+}
+
+.login a{
+    text-decoration:none;
+    color:#ec4899;
+    font-weight:bold;
+}
+
+.login a:hover{
+    color:#2563eb;
+}
